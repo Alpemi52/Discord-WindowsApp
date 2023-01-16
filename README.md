@@ -1,2 +1,2 @@
-Bu bir discord projesidir.
+Bu bir discord projesidir. </br>
 Sadece kendimi geliştiriyorum champ

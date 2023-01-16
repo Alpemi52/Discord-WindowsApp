@@ -30,6 +30,12 @@ class MyTheme {
       surfaceTintColor: primaryLightColor,
       foregroundColor: secondLightColor
     ),
+    shadowColor: secondLightColor,
+    textTheme: TextTheme(
+        headline1: TextStyle(color: secondDarkColor,fontSize:14,fontWeight: FontWeight.w400)
+    ),
+    highlightColor: Colors.black87,
+    primaryColor: Colors.black45,
   );
 
   static final darkTheme = ThemeData(
@@ -42,5 +48,11 @@ class MyTheme {
       surfaceTintColor: secondDarkColor,
       foregroundColor: thirdDarkColor,
     ),
+      shadowColor: primaryDarkColor,
+      textTheme: TextTheme(
+          headline1: TextStyle(color: secondLightColor,fontSize:14,fontWeight: FontWeight.w400)
+      ),
+    highlightColor: Colors.white70,
+    primaryColor: Colors.white10,
   );
 }
