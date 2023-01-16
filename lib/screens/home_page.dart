@@ -1,3 +1,4 @@
+import 'package:discord/Theme/theme_provider.dart';
 import 'package:discord/class/server_avatar_items.dart';
 import 'package:discord/widget/change_theme_button.dart';
 import 'package:discord/widget/server_avatar.dart';
@@ -50,6 +51,8 @@ List<FriendsItems> friends = [
 ];
 
 class _HomePageState extends State<HomePage> {
+  bool isHover = true;
+  bool isOpen = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,13 +64,71 @@ class _HomePageState extends State<HomePage> {
           Container(
             width: 73,
             color: Theme.of(context).appBarTheme.foregroundColor,
-            child: ListView.builder(
-              scrollDirection: Axis.vertical,
-              controller: ScrollController(),
-              itemCount: avatar.length,
-              itemBuilder: (context, index) {
-                return ServerAvatar(item: avatar[index]);
-              },
+            child: Column(
+              children: [
+                //Ana Sayfaya dönüş
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 7),
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          AnimatedContainer(
+                            duration: const Duration(milliseconds: 300),
+                            width: 5,
+                            height: isOpen ? 40 : 20,
+                            decoration: BoxDecoration(
+                                color: isOpen ? Theme.of(context).indicatorColor : isHover ? Theme.of(context).indicatorColor : Colors.transparent,
+                                borderRadius: const BorderRadius.horizontal(right: Radius.circular(50))
+                            ),
+                          ),
+                          const SizedBox(width: 6.5,),
+                          InkWell(
+                            onTap: () {
+                              for (int i = 0;i < avatar.length;i++)
+                                {
+                                  avatar[i].isOpen = false;
+                                }
+                              isOpen = !isOpen;
+                              setState(() {});
+                            },
+                            onHover: (value) {
+                              isHover = value;
+                              setState(() {});
+                            },
+                            child: AnimatedContainer(
+                              duration: const Duration(milliseconds: 300),
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(isOpen ? 15 : isHover ? 15 : 50),
+                                  color: isHover ? discordBlue : isOpen ? discordBlue : Theme.of(context).appBarTheme.backgroundColor,
+                              ),
+                              child: Icon(Icons.discord,size: 25,color: isHover ? Colors.white : Theme.of(context).brightness.name == "dark" ? isOpen ? Theme.of(context).indicatorColor : Colors.white : isOpen ? Colors.white : Theme.of(context).indicatorColor ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 5,),
+                      Container(
+                        height: 2,
+                        width: 32,
+                        color: primaryDarkColor,
+                      )
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    controller: ScrollController(),
+                    itemCount: avatar.length,
+                    itemBuilder: (context, index) {
+                      return ServerAvatar(item: avatar[index]);
+                    },
+                  ),
+                ),
+              ],
             ),
           ),
           Expanded(
@@ -83,7 +144,7 @@ class _HomePageState extends State<HomePage> {
                       Container(
                         height: 50,
                         width: 238,
-                        padding: EdgeInsets.all(11),
+                        padding: const EdgeInsets.all(11),
                         decoration: BoxDecoration(
                             color: Theme.of(context).appBarTheme.surfaceTintColor,
                             boxShadow: const [
@@ -125,25 +186,48 @@ class _HomePageState extends State<HomePage> {
                             });
                           },
                           child: Container(
-                            padding: EdgeInsets.only(left: 8),
+                            padding: const EdgeInsets.only(left: 8),
                             alignment: Alignment.centerLeft,
                             decoration: BoxDecoration(
                                 color: Theme.of(context).appBarTheme.foregroundColor,
                                 borderRadius: BorderRadius.circular(4)
                             ),
-                            child: Text("Sohbet bul ya da başlat",style: TextStyle(color: Colors.grey),),
+                            child: const Text("Sohbet bul ya da başlat",style: TextStyle(color: Colors.grey),),
                           ),
                         ),
                       ),
                       Expanded(
                         child: ListView.builder(
                             itemCount: friends.length,
-                            padding: EdgeInsets.symmetric(horizontal: 8),
+                            padding: const EdgeInsets.symmetric(horizontal: 8),
                             itemBuilder: (context, index) {
                               return FriendsList(item: friends[index] );
                             }
                         ),
                       ),
+                      Container(
+                        height: 190,
+                        color: Theme.of(context).brightness.name == "dark" ? const Color.fromARGB(255, 41, 43, 47) : const Color.fromARGB(255,235, 237, 239),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.grey,width: 2),
+                                    borderRadius: BorderRadius.circular(4)
+                                  ),
+                                  child: Icon(Icons.question_mark),
+                                ),
+                                Spacer(),
+                                Icon(Icons.desktop_mac_outlined)
+                              ],
+                            ),
+                            Row(children: [],),
+                            Row(children: [],),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),
@@ -168,7 +252,7 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 ]
                             ),
-                            child: ChangeThemeButton(),
+                            child: const ChangeThemeButton(),
                           );
                           },
                       ),

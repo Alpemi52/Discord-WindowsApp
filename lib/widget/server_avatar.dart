@@ -14,7 +14,7 @@ class _ServerAvatarState extends State<ServerAvatar> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 7),
+      padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         children: [
           AnimatedContainer(
@@ -42,7 +42,7 @@ class _ServerAvatarState extends State<ServerAvatar> {
               width: 50,
               decoration: BoxDecoration(
                   image: DecorationImage(image: NetworkImage(widget.item.image)),
-                  borderRadius: BorderRadius.circular(isHover ? 15 : 50)
+                  borderRadius: BorderRadius.circular(widget.item.isOpen ? 15 : isHover ? 15 : 50)
               ),
             ),
           ),

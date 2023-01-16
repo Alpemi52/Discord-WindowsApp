@@ -5,6 +5,7 @@ Color secondDarkColor = const Color.fromARGB(255, 47, 49, 54);
 Color thirdDarkColor = const Color.fromARGB(255, 32, 34, 37);
 Color primaryLightColor = const Color.fromARGB(255, 242, 243, 245);
 Color secondLightColor = const Color.fromARGB(255, 227, 229, 232);
+Color discordBlue = const Color.fromARGB(255, 88, 101, 242);
 
 class ThemeProvider extends ChangeNotifier {
   ThemeMode themeMode = ThemeMode.dark;
