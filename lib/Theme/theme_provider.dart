@@ -37,6 +37,7 @@ class MyTheme {
     ),
     highlightColor: Colors.black87,
     primaryColor: Colors.black45,
+    disabledColor:  const Color.fromARGB(255,235, 237, 239),
   );
 
   static final darkTheme = ThemeData(
@@ -55,5 +56,6 @@ class MyTheme {
       ),
     highlightColor: Colors.white70,
     primaryColor: Colors.white10,
+    disabledColor: const Color.fromARGB(255, 41, 43, 47),
   );
 }

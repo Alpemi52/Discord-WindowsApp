@@ -30,6 +30,7 @@ class _ServerAvatarState extends State<ServerAvatar> {
           InkWell(
             onTap: () {
               widget.item.isOpen = !widget.item.isOpen;
+
               setState(() {});
             },
             onHover: (value) {

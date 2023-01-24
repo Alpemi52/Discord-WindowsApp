@@ -207,22 +207,26 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Container(
                         height: 190,
-                        color: Theme.of(context).brightness.name == "dark" ? const Color.fromARGB(255, 41, 43, 47) : const Color.fromARGB(255,235, 237, 239),
+                        color: Theme.of(context).disabledColor,
                         child: Column(
                           children: [
-                            Row(
-                              children: [
-                                Container(
-                                  decoration: BoxDecoration(
-                                    border: Border.all(color: Colors.grey,width: 2),
-                                    borderRadius: BorderRadius.circular(4)
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      border: Border.all(color: Colors.grey,width: 2),
+                                      borderRadius: BorderRadius.circular(4)
+                                    ),
+                                    child: Icon(Icons.question_mark),
                                   ),
-                                  child: Icon(Icons.question_mark),
-                                ),
-                                Spacer(),
-                                Icon(Icons.desktop_mac_outlined)
-                              ],
+                                  Spacer(),
+                                  Icon(Icons.desktop_mac_outlined)
+                                ],
+                              ),
                             ),
+                            Divider(color: Colors.grey,thickness: 0.2),
                             Row(children: [],),
                             Row(children: [],),
                           ],
