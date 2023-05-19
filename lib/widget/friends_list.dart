@@ -23,7 +23,7 @@ class _FriendsListState extends State<FriendsList> {
         });
       },
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 4),
+        margin: const EdgeInsets.symmetric(vertical: 4),
         height: 40,
         decoration: BoxDecoration(
             color: isHover ? Theme.of(context).shadowColor : Colors.transparent,
@@ -31,20 +31,20 @@ class _FriendsListState extends State<FriendsList> {
         ),
         child: Row(
           children: [
-            SizedBox(width: 8,),
+            const SizedBox(width: 8,),
             CircleAvatar(
               radius: 15.5,
               backgroundImage: NetworkImage(widget.item.image),
             ),
-            SizedBox(width: 12,),
+            const SizedBox(width: 12,),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(widget.item.name,maxLines: 1,overflow: TextOverflow.ellipsis,style: isHover ? Theme.of(context).textTheme.headline1 :  TextStyle(color: Colors.grey,)),
-                Text(widget.item.status,maxLines: 1,overflow: TextOverflow.ellipsis,style: isHover ? Theme.of(context).textTheme.headline1 :  TextStyle(color: Colors.grey,)),
+                Text(widget.item.name,maxLines: 1,overflow: TextOverflow.ellipsis,style: isHover ? Theme.of(context).textTheme.displayLarge :  const TextStyle(color: Colors.grey,)),
+                Text(widget.item.status,maxLines: 1,overflow: TextOverflow.ellipsis,style: isHover ? Theme.of(context).textTheme.displayLarge :  const TextStyle(color: Colors.grey,)),
               ],
             ),
-            Spacer(),
+            const Spacer(),
             InkWell(
               onTap: () {},
               onHover: (value) {
@@ -59,7 +59,7 @@ class _FriendsListState extends State<FriendsList> {
                 child: Icon(Icons.close_rounded,size: isHover ? 16 : 0,color: isHover2 ? Theme.of(context).highlightColor : Theme.of(context).primaryColor ),
               ),
             ),
-            SizedBox(width: 5,)
+            const SizedBox(width: 5,)
           ],
         ),
       ),

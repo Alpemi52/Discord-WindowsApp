@@ -42,7 +42,7 @@ class _ServerAvatarState extends State<ServerAvatar> {
               height: 50,
               width: 50,
               decoration: BoxDecoration(
-                  image: DecorationImage(image: NetworkImage(widget.item.image)),
+                  image: DecorationImage(image: AssetImage(widget.item.image)),
                   borderRadius: BorderRadius.circular(widget.item.isOpen ? 15 : isHover ? 15 : 50)
               ),
             ),

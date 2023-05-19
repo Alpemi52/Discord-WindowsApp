@@ -38,6 +38,7 @@ class MyTheme {
     highlightColor: Colors.black87,
     primaryColor: Colors.black45,
     disabledColor:  const Color.fromARGB(255,235, 237, 239),
+      hoverColor: const Color.fromARGB(255, 231, 233, 235)
   );
 
   static final darkTheme = ThemeData(
@@ -52,10 +53,11 @@ class MyTheme {
     ),
       shadowColor: primaryDarkColor,
       textTheme: TextTheme(
-          headline1: TextStyle(color: secondLightColor,fontSize:14,fontWeight: FontWeight.w400)
+          displayLarge: TextStyle(color: secondLightColor,fontSize:14,fontWeight: FontWeight.w400)
       ),
     highlightColor: Colors.white70,
     primaryColor: Colors.white10,
     disabledColor: const Color.fromARGB(255, 41, 43, 47),
+    hoverColor: const Color.fromARGB(255, 64, 65, 75)
   );
 }
