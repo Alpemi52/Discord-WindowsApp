@@ -1,6 +1,8 @@
 Bu bir discord projesidir. </br>
-<<<<<<< HEAD
 Sadece kendimi geliştiriyorum champ
-=======
-Sadece kendimi geliştiriyorum champ
->>>>>>> 6cceebd84dc96db583d2c1a5178024e67014aad8
+Bu proje hala devam ediyor...
+GECE MODU:
+![image](https://github.com/Alpemi52/Discord-WindowsApp/assets/97763635/69e3cf70-d370-4218-9dd1-1cb7dfba6421)
+![image](https://github.com/Alpemi52/Discord-WindowsApp/assets/97763635/8ded8066-da3e-4304-b64b-09e7d5b5a90b)
+
+
